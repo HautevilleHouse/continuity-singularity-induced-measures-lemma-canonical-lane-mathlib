@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ContinuitySingularityInducedMeasuresLemmaCanonicalLaneLean.ContinuitySingularityStructure
+import HautevilleHouse.ContinuitySingularityInducedMeasuresLemmaCanonicalLaneLean.RadonNikodymBridge
+import HautevilleHouse.ContinuitySingularityInducedMeasuresLemmaCanonicalLaneLean.SingularityAbsoluteContinuity
+
+namespace HautevilleHouse
+namespace ContinuitySingularityInducedMeasuresLemmaCanonicalLaneLean
+
+def ConstrainedContinuitySingularityClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_continuity_singularity_endgame (A : AdmissibleClass) :
+    ConstrainedContinuitySingularityClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ContinuitySingularityInducedMeasuresLemmaCanonicalLaneLean
+end HautevilleHouse
